@@ -54,9 +54,10 @@ public class DBMonolith {
         // create DBStatement
         Statement dbStatement = dbMonolith.createStatement(dbConnection);
 
-        // execute SQL query
-        String sqlQuery = "Select firstName, lastName, id From Student;";
-        ResultSet resultSet = dbMonolith.executeStatement(dbStatement, sqlQuery);
+        // execute SQL query through statement
+        StringBuilder sqlQuery = new StringBuilder();
+        sqlQuery.append("Select firstName, lastName, id From Student;");
+        ResultSet resultSet = dbMonolith.executeStatement(dbStatement, sqlQuery.toString());
 
         // prints out every row from query
         while(resultSet.next()){

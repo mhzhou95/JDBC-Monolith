@@ -62,8 +62,11 @@ public class DBMonolith {
         // prints out every row from query
         while(resultSet.next()){
             System.out.println(
+                    // first column in set
                     resultSet.getString(1)+"\t"+
+                            // second column in set
                             resultSet.getString(2)+"\t"+
+                            // third column in set
                             resultSet.getString(3)
             );
         }
